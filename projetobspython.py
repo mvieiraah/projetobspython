@@ -5,7 +5,7 @@ url= 'http://www.rj.gov.br/web/seeduc'
 
 r = requests.get(url)
 
-soup = BeautifulSoup.BeautifulSoup(r.text,'lxml')
+soup = BeautifulSoup.BeautifulSoup(r.text,'html.parser')
  
 lista_diretorias = soup.find_all('table': class='Diretorias_regionais'):
 #print(lista_diretorias)
@@ -13,7 +13,7 @@ lista_diretorias = soup.find_all('table': class='Diretorias_regionais'):
 url= 'http://www.rj.gov.br/web/seeduc/exibeconteudo?article-id=375402'
 
 for lista_td in lista_diretorias:
-    lista_td,findall('td')
+    lista_td.findall('td')
     for lista_dados in lista:
     #print(lista_dados.next_element)
         if lista_dados.next_element.name == 'a':
